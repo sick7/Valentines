@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing-page">
+    <i class="fas fa-heart"></i>
+    <h1>Welcome to Valentine's Page !</h1>
+    <button onclick="openTabs()">Let's Celebrate Love! 💖</button>
+   
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs" id="tabs" style="display: none;">
+    <button class="tablink" onclick="openPage('landing-page', this)">Home</button>
+    <button class="tablink" onclick="openPage('valentine-page', this)" id="defaultOpen"><i class="fas fa-heart"></i></button>
+    <button class="tablink" onclick="openPage('week-page', this)">Valentine's Week</button>
+    <button class="tablink" onclick="openPage('love-quiz', this)">Love Quiz</button>
+    <button class="tablink" onclick="openPage('dates-to-remember', this)">Dates to Remember</button>
+    <button class="tablink" onclick="openPage('romantic-music', this)">Romantic Music</button>
+  </div>
+
+  <!-- Valentine Page -->
+  <div id="valentine-page" class="tabcontent">
+    <h1>Will You Be My Valentine?</h1>
+    <div class="buttons">
+      <button id="yes-btn">Yes, I'd love to! 💖</button>
+      <button id="no-btn">No, I'm allergic to love 😅</button>
+      <button id="stop-btn" onClick="window.location.reload();">🔙</button>
+      
+    </div>
+    <div id="animation-container"></div>
+    <video id="celebration-video" controls style="display: none; width: 100%; max-width: 600px; margin-top: 20px;">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+   
+  </div>
+
+  <!-- Valentine's Week Page -->
+  <div id="week-page" class="tabcontent">
+    <h1>Valentine's Week</h1>
+    <div class="week-buttons">
+      <button onclick="showRoses()" style="background-color: #ff6666;">🌹 Rose Day</button>
+      <button onclick="showPromise()" style="background-color: #ffcc66;">🤝 Promise Day</button>
+      <button onclick="showHug()" style="background-color: #66ccff;">🤗 Hug Day</button>
+      <button onclick="showKiss()" style="background-color: #ff66b3;">💋 Kiss Day</button>
+      <button onclick="showTeddy()" style="background-color: #cc66ff;">🧸 Teddy Day</button>
+      <button onclick="showChocolate()" style="background-color: #ff6666;">🍫 Chocolate Day</button>
+      <button onclick="showProposal()" style="background-color: #66ff66;">💍 Proposal Day</button>
+    </div>
+    <div id="week-animation"></div>
+ 
+  </div>
+
+  <!-- Love Quiz Page -->
+  <div id="love-quiz" class="tabcontent">
+    <h1>Love Quiz</h1>
+    <div id="quiz-container">
+      <p id="quiz-question"></p>
+      <div id="quiz-options"></div>
+      <button id="quiz-next" onclick="nextQuestion()">Next Question</button>
+      <div id="love-meter">
+        <div id="love-meter-fill"></div>
+      </div>
+      <p id="quiz-score">Score: 0/25</p>
+    </div>
+  
+  </div>
+
+<!-- Dates to Remember Page -->
+<div id="dates-to-remember" class="tabcontent">
+  <h1>Dates to Remember</h1>
+  <ul id="dates-list">
+    <li>
+      <span class="date" onclick="revealPurpose(this)">25th October</span>
+      <span class="purpose">Our Anniversary 💑</span>
+    </li>
+    <li>
+      <span class="date" onclick="revealPurpose(this)">27th April</span>
+      <span class="purpose">Bucky's Birthday 🎂</span>
+    </li>
+    <li>
+      <span class="date" onclick="revealPurpose(this)">14th February</span>
+      <span class="purpose">Valentine's Day 💖</span>
+    </li>
+    <li>
+      <span class="date" onclick="revealPurpose(this)">6th August</span>
+      <span class="purpose">Our First Date 🌹</span>
+    </li>
+  </ul>
+ 
+</div>
+
+  <!-- Romantic Music Page -->
+  <div id="romantic-music" class="tabcontent">
+    <h1>Romantic Music</h1>
+    <p>Click the Spotify logo to listen to a romantic playlist!</p>
+    <a href="https://open.spotify.com/playlist/37i9dQZF1EVGJJ3r00UGAt?si=baB8NAUGS_Cytb_T8mmsoQ" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo" width="100">
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
